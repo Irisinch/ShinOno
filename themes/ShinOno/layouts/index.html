@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="home-content">
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Site.Params.description | default "Welcome to my website!" }}</p>
+
+    <h2>最近の投稿</h2>
+    <ul>
+        {{ range first 5 .Site.RegularPages.ByDate.Reverse }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span class="post-date">({{ .Date.Format "2006-01-02" }})</span>
+            </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }}

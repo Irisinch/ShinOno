@@ -1,0 +1,51 @@
+<aside class="sidebar">
+    <div class="sidebar-content">
+        {{ if .Site.Sections }}
+        <div class="sidebar-section">
+            <h3>セクション</h3>
+            <ul>
+                {{ range .Site.Sections.ByTitle }}
+                    {{ if ne .Pages nil }} {{/* ページが1つもないセクションは除外 */}}
+                    <li>
+                        <a href="{{ .Permalink }}">{{ .Title }} ({{ .Pages | len }})</a>
+                        {{/* ネストされたセクションを表示する場合 (必要に応じて) */}}
+                        {{ if .Sections }}
+                        <ul>
+                            {{ range .Sections.ByTitle }}
+                            <li><a href="{{ .Permalink }}">{{ .Title }} ({{ .Pages | len }})</a></li>
+                            {{ end }}
+                        </ul>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{ if .Site.Taxonomies.categories }}
+        <div class="sidebar-section">
+            <h3>{{ .Site.Params.sidebar_categories_title | default "カテゴリ" }}</h3>
+            <ul>
+                {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+                <li><a href="{{ (print "/categories/" $name) | relURL }}">{{ $name | humanize }} ({{ $taxonomy.Count }})</a></li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+
+        {{/* 他のタクソノミー (例: tags) も同様に追加可能 */}}
+        {{/*
+        {{ if .Site.Taxonomies.tags }}
+        <div class="sidebar-section">
+            <h3>タグ</h3>
+            <ul>
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <li><a href="{{ (print "/tags/" $name) | relURL }}">{{ $name | humanize }} ({{ $taxonomy.Count }})</a></li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+        */}}
+    </div>
+</aside>

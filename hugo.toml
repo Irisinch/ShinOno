@@ -1,0 +1,33 @@
+baseURL = 'https://example.org/'
+languageCode = 'ja'
+title = 'My New Hugo Site'
+theme = 'ShinOno'
+
+[params]
+  description = "これは私の素晴らしいHugoサイトです。"
+  # sidebar_categories_title = "マイカテゴリ" # サイドバーのカテゴリタイトルを上書き
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "ホーム"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "概要"
+    url = "/about/"
+    weight = 20
+  # [[menu.main]]
+  #   identifier = "blog"
+  #   name = "ブログ"
+  #   url = "/blog/" # blogセクションがある場合
+  #   weight = 30
+
+# タクソノミーの設定 (カテゴリとタグを有効にする)
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# ページネーションの設定
+paginate = 5 # 1ページあたり5記事表示
