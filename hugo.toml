@@ -5,7 +5,36 @@ theme = 'ShinOno'
 
 [params]
   description = "これは私の素晴らしいHugoサイトです。"
-  # sidebar_categories_title = "マイカテゴリ" # サイドバーのカテゴリタイトルを上書き
+
+  # --- Aboutセクション用 ---
+  aboutSectionTitle = "About" # Aboutセクションのタイトル
+  authorName = "小野 真一朗 / Shinichiro Ono"
+  authorAffiliation = "東北大学　生命科学研究科　進化ゲノミクス分野"
+  # 連絡先情報 (配列で複数設定可能)
+  contactInfoTitle = "Contact" # 連絡先リストのタイトル
+  [[params.contacts]]
+    label = "Email"
+    value = "ono.shinichiro.r1@dc.tohoku.ac.jp"
+    link = "mailto:ono.shinichiro.r1@dc.tohoku.ac.jp"
+  [[params.contacts]]
+    label = "GitHub"
+    value = "Irisinch"
+    link = "https://github.com/Irisinch"
+  # 必要に応じて連絡先を追加してください
+  # [[params.contacts]]
+  #   label = "LinkedIn"
+  #   value = "YourLinkedInProfile"
+  #   link = "https://linkedin.com/in/YourLinkedInProfile"
+
+  # --- Newsセクション用 ---
+  newsSectionTitle = "News" # Newsセクションのタイトル
+  newsCount = 5 # 表示するニュースの件数 (お好みで調整)
+  sidebar_categories_title = "カテゴリ" # これはサイドバー用なのでトップページとは別
+
+  # --- Postセクション用 (▼ここから新規追加▼) ---
+  postSectionTitle = "Recent Posts" # Post欄のタイトル
+  postCount = 5                  # Post欄に表示する記事の数
+  # ▲ここまで新規追加▲
 
 [menu]
   [[menu.main]]

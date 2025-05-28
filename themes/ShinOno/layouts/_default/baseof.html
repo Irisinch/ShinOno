@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    {{/* サイト共通のCSS */}}
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-    {{ block "head" . }}{{ end }} <!-- 各テンプレートで追加のhead要素を挿入可能 -->
+    {{/* このブロックを使ってページ固有のものを追加する */}}
+    {{ block "head" . }}{{ end }}
 </head>
 <body>
     <div class="container">
