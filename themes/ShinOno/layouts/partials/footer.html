@@ -1,4 +1,25 @@
 <footer class="site-footer">
-    <p>© {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
-    <p>Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & MyTheme.</p>
+    <div class="copyright">
+        {{ $year := .Site.Params.copyrightYear | default now.Year }}
+        {{ $owner := .Site.Params.copyrightOwner | default .Site.Title }}
+        © {{ $year }}, {{ $owner }}.
+        {{- /* All rights reserved. を追加したい場合は以下をコメントアウト解除 */}}
+        {{- /* All rights reserved. */}}
+    </div>
+
+    {{ if or (.Site.Params.poweredByHugo) (.Site.Params.poweredByTheme) }}
+    <div class="powered-by">
+        {{ if .Site.Params.poweredByHugo }}
+            Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+        {{ end }}
+        {{ if and (.Site.Params.poweredByHugo) (.Site.Params.poweredByTheme) }}
+            &
+        {{ end }}
+        {{ if .Site.Params.poweredByTheme }}
+            {{ with .Site.Params.themeName | default .Site.Theme.Name }}
+                {{ . | humanize }} Theme
+            {{ end }}
+        {{ end }}
+    </div>
+    {{ end }}
 </footer>

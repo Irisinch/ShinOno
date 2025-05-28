@@ -1,12 +1,10 @@
 baseURL = 'https://irisinch.github.io/ShinOno/'
 languageCode = 'ja'
-title = 'My New Hugo Site'
+title = 'ShinOno'
 theme = 'ShinOno'
 publishDir = "docs"
 
 [params]
-  description = "これは私の素晴らしいHugoサイトです。"
-
   # --- Aboutセクション用 ---
   aboutSectionTitle = "About" # Aboutセクションのタイトル
   authorName = "小野 真一朗 / Shinichiro Ono"
@@ -61,3 +59,8 @@ publishDir = "docs"
 
 # ページネーションの設定
 paginate = 5 # 1ページあたり5記事表示
+
+# --- Footer用 ---
+copyrightOwner = "Shinichiro Ono"
+copyrightYear = "2025" # 固定の年
+poweredByHugo = true # "Powered by Hugo" を表示する場合 (任意)
