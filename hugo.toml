@@ -2,6 +2,7 @@ baseURL = 'https://irisinch.github.io/ShinOno/'
 languageCode = 'ja'
 title = 'My New Hugo Site'
 theme = 'ShinOno'
+publishDir = "docs"
 
 [params]
   description = "これは私の素晴らしいHugoサイトです。"
