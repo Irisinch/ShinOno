@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ShinOno</title>
-    <link>http://localhost:1313/ShinOno/tags/</link>
+    <link>https://irisinch.github.io/ShinOno/tags/</link>
     <description>Recent content in Tags on ShinOno</description>
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
-    <atom:link href="http://localhost:1313/ShinOno/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://irisinch.github.io/ShinOno/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blue</title>
-      <link>http://localhost:1313/ShinOno/tags/blue/</link>
+      <link>https://irisinch.github.io/ShinOno/tags/blue/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/ShinOno/tags/blue/</guid>
+      <guid>https://irisinch.github.io/ShinOno/tags/blue/</guid>
       <description></description>
     </item>
     <item>
       <title>Green</title>
-      <link>http://localhost:1313/ShinOno/tags/green/</link>
+      <link>https://irisinch.github.io/ShinOno/tags/green/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/ShinOno/tags/green/</guid>
+      <guid>https://irisinch.github.io/ShinOno/tags/green/</guid>
       <description></description>
     </item>
     <item>
       <title>Red</title>
-      <link>http://localhost:1313/ShinOno/tags/red/</link>
+      <link>https://irisinch.github.io/ShinOno/tags/red/</link>
       <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <guid>http://localhost:1313/ShinOno/tags/red/</guid>
+      <guid>https://irisinch.github.io/ShinOno/tags/red/</guid>
       <description></description>
     </item>
   </channel>

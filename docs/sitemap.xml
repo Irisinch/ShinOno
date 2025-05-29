@@ -2,35 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/ShinOno/</loc>
+    <loc>https://irisinch.github.io/ShinOno/</loc>
     <lastmod>2025-05-27T17:34:50+09:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/tags/blue/</loc>
+    <loc>https://irisinch.github.io/ShinOno/tags/blue/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/tags/green/</loc>
+    <loc>https://irisinch.github.io/ShinOno/tags/green/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/posts/post-3/</loc>
+    <loc>https://irisinch.github.io/ShinOno/posts/post-3/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/tags/red/</loc>
+    <loc>https://irisinch.github.io/ShinOno/tags/red/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/tags/</loc>
+    <loc>https://irisinch.github.io/ShinOno/tags/</loc>
     <lastmod>2023-03-15T11:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/posts/post-2/</loc>
+    <loc>https://irisinch.github.io/ShinOno/posts/post-2/</loc>
     <lastmod>2023-02-15T10:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/posts/post-1/</loc>
+    <loc>https://irisinch.github.io/ShinOno/posts/post-1/</loc>
     <lastmod>2023-01-15T09:00:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/posts/</loc>
+    <loc>https://irisinch.github.io/ShinOno/posts/</loc>
     <lastmod>2023-01-01T08:30:00-07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/5/</loc>
+    <loc>https://irisinch.github.io/ShinOno/5/</loc>
   </url><url>
-    <loc>http://localhost:1313/ShinOno/categories/</loc>
+    <loc>https://irisinch.github.io/ShinOno/categories/</loc>
   </url>
 </urlset>
