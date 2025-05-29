@@ -1,7 +1,135 @@
+{{ define "head" }}
+    {{/* トップページ専用のCSSを追加 */}}
+    <link rel="stylesheet" href="{{ "css/home-style.css" | relURL }}">
+{{ end }}
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+<div class="home-container">
+
+    {{/* About セクション */}}
+    <section id="about" class="home-section about-section">
+        <div class="section-title-band">
+            <h2>About</h2>
+        </div>
+        <div class="section-content">
+            {{ with .Site.Params.authorName }}
+                <p class="author-detail"><span class="detail-label">名前:</span> {{ . }}</p>
+            {{ end }}
+            {{ with .Site.Params.authorAffiliation }}
+                <p class="author-detail"><span class="detail-label">所属:</span> {{ . }}</p>
+            {{ end }}
+
+            {{ if .Site.Params.contacts }}
+            <div class="contact-info">
+                <p class="contact-heading"><span class="detail-label">連絡先:</span></p>
+                <ul>
+                    {{ range .Site.Params.contacts }}
+                    <li>
+                        <span class="contact-item-label">{{ .label }}:</span>
+                        {{ if .link }}
+                            <a href="{{ .link }}" target="_blank" rel="noopener noreferrer">{{ .value }}</a>
+                        {{ else }}
+                            <span class="contact-item-value">{{ .value }}</span>
+                        {{ end }}
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+
+    {{/* News セクション (ロジック変更) */}}
+    {{ $newsPath := .Site.Params.newsSectionPath | default "news" }}
+    {{ $newsPages := where .Site.RegularPages "Section" $newsPath }}
+    {{ $newsCount := .Site.Params.newsCount | default 5 }}
+    {{ $filteredNewsPages := $newsPages.ByDate.Reverse }}
+
+    {{ if $filteredNewsPages }}
+    <section id="news" class="home-section news-section">
+        <div class="section-title-band">
+            <h2>{{ .Site.Params.newsSectionTitle | default "News" }}</h2>
+        </div>
+        <div class="section-content">
+            <div class="news-scroll-container">
+                <ul class="news-list">
+                    {{ range first $newsCount $filteredNewsPages }}
+                        <li class="news-item">
+                            <a href="{{ .Permalink }}">
+                                <span class="news-date">[{{ .Date.Format "2006-01-02" }}]</span>
+                                <span class="news-title">{{ .Title }}</span>
+                                {{ if .Params.categories }}
+                                <span class="news-categories">
+                                    {{ range .Params.categories }}
+                                    <span class="news-category">{{ . }}</span>
+                                    {{ end }}
+                                </span>
+                                {{ end }}
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {{ else }}
+    <section id="news" class="home-section news-section">
+         <div class="section-title-band">
+            <h2>{{ .Site.Params.newsSectionTitle | default "News" }}</h2>
+        </div>
+        <div class="section-content">
+            <p>新しい情報はありません。</p>
+        </div>
+    </section>
+    {{ end }}
+
+
+    {{/* ▼ Post セクション (新規追加) ▼ */}}
+    {{ $postExcludedSectionPath := .Site.Params.newsSectionPath | default "news" }}
+    {{/* newsセクション以外の通常ページを取得 */}}
+    {{ $postCandidatePages := where .Site.RegularPages "Section" "!=" $postExcludedSectionPath }}
+    {{ $postCount := .Site.Params.postCount | default 5 }}
+    {{ $filteredPostPages := $postCandidatePages.ByDate.Reverse }}
+
+    {{ if $filteredPostPages }}
+    <section id="posts" class="home-section post-section"> {{/* id とクラス名を posts に */}}
+        <div class="section-title-band">
+            <h2>{{ .Site.Params.postSectionTitle | default "Recent Posts" }}</h2>
+        </div>
+        <div class="section-content">
+            <div class="post-scroll-container"> {{/* クラス名を post- に */}}
+                <ul class="post-list"> {{/* クラス名を post- に */}}
+                    {{ range first $postCount $filteredPostPages }}
+                        <li class="post-item"> {{/* クラス名を post- に */}}
+                            <a href="{{ .Permalink }}">
+                                <span class="post-date">[{{ .Date.Format "2006-01-02" }}]</span> {{/* クラス名を post- に */}}
+                                <span class="post-title">{{ .Title }}</span> {{/* クラス名を post- に */}}
+                                {{ if .Params.categories }}
+                                <span class="post-categories"> {{/* クラス名を post- に */}}
+                                    {{ range .Params.categories }}
+                                    <span class="post-category">{{ . }}</span> {{/* クラス名を post- に */}}
+                                    {{ end }}
+                                </span>
+                                {{ end }}
+                                {{/* もしセクション名も表示したい場合 */}}
+                                {{/* <span class="post-section-name">({{ .Section | humanize }})</span> */}}
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {{ else }}
+    <section id="posts" class="home-section post-section">
+         <div class="section-title-band">
+            <h2>{{ .Site.Params.postSectionTitle | default "Recent Posts" }}</h2>
+        </div>
+        <div class="section-content">
+            <p>新しい投稿はありません。</p>
+        </div>
+    </section>
+    {{ end }}
+    {{/* ▲ Post セクション (ここまで) ▲ */}}
+
+</div>
 {{ end }}

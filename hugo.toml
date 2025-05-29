@@ -3,6 +3,7 @@ languageCode = 'ja'
 title = 'ShinOno'
 theme = 'ShinOno'
 publishDir = "docs"
+timeZone = "Asia/Tokyo"
 
 [params]
   # --- Aboutセクション用 ---
@@ -33,7 +34,11 @@ publishDir = "docs"
   # --- Postセクション用 (▼ここから新規追加▼) ---
   postSectionTitle = "Recent Posts" # Post欄のタイトル
   postCount = 5                  # Post欄に表示する記事の数
-  # ▲ここまで新規追加▲
+
+  # --- Footer用 ---
+  copyrightOwner = "Shinichiro Ono"
+  copyrightYear = "2025" # 固定の年
+  poweredByHugo = true # "Powered by Hugo" を表示する場合 (任意)
 
 [menu]
   [[menu.main]]
@@ -41,11 +46,11 @@ publishDir = "docs"
     name = "ホーム"
     url = "/"
     weight = 10
-  [[menu.main]]
-    identifier = "about"
-    name = "概要"
-    url = "/about/"
-    weight = 20
+  #[[menu.main]]
+  #  identifier = "about"
+  #  name = "概要"
+  #  url = "/about/"
+  #  weight = 20
   # [[menu.main]]
   #   identifier = "blog"
   #   name = "ブログ"
@@ -60,7 +65,3 @@ publishDir = "docs"
 # ページネーションの設定
 paginate = 5 # 1ページあたり5記事表示
 
-# --- Footer用 ---
-copyrightOwner = "Shinichiro Ono"
-copyrightYear = "2025" # 固定の年
-poweredByHugo = true # "Powered by Hugo" を表示する場合 (任意)
